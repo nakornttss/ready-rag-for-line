@@ -1,0 +1,31 @@
+image:
+  repository: ghcr.io/ghcr.io/nakornttss/ready-rag-for-line
+  tag: "v1.0.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 5000
+  nodePort: 32000
+
+env:
+  OPENAI_API_KEY: ""
+  LINE_CHANNEL_ACCESS_TOKEN: ''
+  LINE_CHANNEL_SECRET: ''
+  CHAT_COMPLETION_MODEL: "gpt-4o-mini"
+  CHAT_COMPLETION_TEMPERATURE: 0.7
+  OPENAI_EMBEDDING_MODEL: "text-embedding-3-small"
+  VECTOR_DIMENSION: 1536
+  FAISS_INDEX_PATH: "/app/faiss_data/faiss_index.bin"
+  INITIAL_TEXTS: |
+    [
+      "T.T. Software Solution เป็นผู้เชี่ยวชาญด้านโซลูชันซอฟต์แวร์ที่สร้างขึ้นโดยทีมงาน MVP ที่มีความเชี่ยวชาญทางเทคนิค", 
+        "เราเป็นผู้นำในด้านเทคโนโลยีของ Microsoft ในประเทศไทย โดยพัฒนาโซลูชันธุรกิจด้วย ASP.NET, Azure และ C# ด้วยทีม MVP และผู้เชี่ยวชาญ", 
+        "หากต้องการติดต่อเรา: สำนักงานกรุงเทพฯ โทร 086-899-6243, สำนักงานขอนแก่น โทร 061-018-1275, ฝ่ายทรัพยากรบุคคล โทร 061-018-1275 หรืออีเมล hr@tt-ss.net", 
+        "บริการพัฒนาระบบ Back Office Web Application ที่ออกแบบและพัฒนาตามความต้องการเฉพาะขององค์กร", 
+        "บริการพัฒนาระบบ Data Visualization โดยออกแบบและพัฒนา Dashboard ที่ช่วยในการวิเคราะห์และตัดสินใจ", 
+        "บริการให้คำปรึกษา พัฒนา และดูแลระบบบน Azure Cloud โดยทีมงานมืออาชีพ เช่น การย้ายระบบไปยัง Azure Cloud, การพัฒนาโซลูชัน, การให้คำปรึกษาและอบรม รวมถึงการดูแลระบบบน Azure Cloud",
+        "ผลงานภายในประเทศ: ระบบเผยแพร่ข้อมูลจัดซื้อจัดจ้างภาครัฐของกรุงเทพมหานคร บริษัทได้จัดอบรมการใช้งานระบบนี้ในวันที่ 18 กรกฎาคม 2567 และส่งงานตามกำหนดเวลา ซึ่งแสดงถึงศักยภาพของบริษัท", 
+        "ผลงานในต่างประเทศ: พัฒนาระบบจัดการทรัพยากรในกรณีฉุกเฉิน เช่น ซ่อมแซมโครงสร้างพื้นฐานสาธารณูปโภคและการดับไฟป่า ให้กับลูกค้าใน USA", 
+        "ผู้บริหารของบริษัท: CEO นคร เหรียญตระกูลชัย, CTO คุณป้องกัน, General Manager คุณวัชรพงษ์"
+    ]
