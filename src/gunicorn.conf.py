@@ -20,6 +20,7 @@ def on_starting(server):
     initial_texts_str = os.getenv('INITIAL_TEXTS', '[]')
 
     # Convert the string (which is in JSON format) into a Python list
+    initial_texts_str = initial_texts_str.replace("'", '"')
     initial_texts = json.loads(initial_texts_str)
     
     all_embeddings = []
