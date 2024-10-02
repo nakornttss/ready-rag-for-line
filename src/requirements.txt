@@ -1,0 +1,6 @@
+Flask
+gunicorn
+requests
+pythainlp
+numpy
+faiss-cpu
