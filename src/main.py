@@ -9,9 +9,27 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
 
+# Liveness check route
+@app.route('/status/liveness', methods=['GET'])
+def liveness():
+    return jsonify({"status": "alive"}), 200
+
+# Readiness check route
+@app.route('/status/readiness', methods=['GET'])
+def readiness():
+    try:
+        # Example check: Load FAISS index to confirm service is ready
+        faiss_index = load_or_create_faiss_index()
+        if faiss_index:
+            return jsonify({"status": "ready"}), 200
+        else:
+            return jsonify({"status": "unready"}), 503
+    except Exception as e:
+        logger.error(f"Readiness check failed: {e}")
+        return jsonify({"status": "unready", "error": str(e)}), 503
+
 @app.route('/webhook', methods=['POST'])
 def webhook():
-
     if not verify_line_signature(request):
         logger.warning("Failed signature verification")
         return abort(403)
@@ -27,14 +45,14 @@ def webhook():
                 # Load FAISS index and find similar texts
                 faiss_index = load_or_create_faiss_index()
                 similar_texts = search_similar_texts(user_message, faiss_index)
-                logger.info(f"Similar texts found: {similar_texts}")         
+                logger.info(f"Similar texts found: {similar_texts}")
 
                 # Combine similar texts into a single string context
                 combined_context = '. '.join(similar_texts)
 
                 # Get a response from the chat completion API
                 response_message = get_chat_completion_response(user_message, combined_context)
-                
+
                 if response_message:
                     send_line_reply(reply_token, response_message)
                 else:
