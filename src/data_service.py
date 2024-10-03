@@ -56,6 +56,9 @@ def search_similar_texts(query, faiss_index, k=3):
     initial_texts_str = os.getenv('INITIAL_TEXTS', '[]')
 
     # Convert the string (which is in JSON format) into a Python list
+    initial_texts_str = initial_texts_str.replace("'", '"')
+
+    # Convert the string (which is in JSON format) into a Python list
     initial_texts = json.loads(initial_texts_str)
 
     # Preprocess the query text
