@@ -3,7 +3,17 @@ entries:
   ready-rag-for-line-chart:
   - apiVersion: v2
     appVersion: v1.0.2
-    created: "2024-10-03T09:56:52.144640531Z"
+    created: "2024-10-03T10:58:19.209351846Z"
+    description: A Simple Ready-to-use Rag for LINE chart for Kubernetes
+    digest: a63c833e498749048c45a68d8f27f1bc32e658eccacadb0896d74ef4c9518197
+    name: ready-rag-for-line-chart
+    type: application
+    urls:
+    - https://nakornttss.github.io/ready-rag-for-line/ready-rag-for-line-chart-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: v1.0.2
+    created: "2024-10-03T10:58:19.208840939Z"
     description: A Simple Ready-to-use Rag for LINE chart for Kubernetes
     digest: ae2b8f45108098f68423c7c4381587cf6bf3b4c0c59351253c48540876986746
     name: ready-rag-for-line-chart
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://nakornttss.github.io/ready-rag-for-line/ready-rag-for-line-chart-0.2.0.tgz
     version: 0.2.0
-generated: "2024-10-03T09:56:52.144132192Z"
+generated: "2024-10-03T10:58:19.208306821Z"
