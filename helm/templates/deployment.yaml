@@ -36,3 +36,15 @@ spec:
               value: "{{ .Values.env.FAISS_INDEX_PATH }}"
             - name: INITIAL_TEXTS
               value: "{{ .Values.env.INITIAL_TEXTS }}"
+          livenessProbe:
+            httpGet:
+              path: /status/liveness
+              port: 5000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /status/readiness
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
