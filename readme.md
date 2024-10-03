@@ -2,6 +2,8 @@
 
 This project provides a simple, ready-to-use Retrieval-Augmented Generation (RAG) solution for LINE messenger. It is configured to allow users to easily install and deploy using either Docker Compose or Helm in Kubernetes.
 
+![Introduction](intro.png)
+
 ## Features
 
 - Integration with OpenAI API for GPT models.
@@ -168,3 +170,9 @@ You can configure the following environment variables:
 ## License
 
 This project is licensed under the MIT License.
+
+## Follow us
+
+Follow us at https://www.tt-ss.net
+
+![Follow us](ttss.png)
