@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ready-rag-for-line-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-10-03T09:40:32.831334017Z"
+    description: A Helm chart for Kubernetes
+    digest: 0fa6bd41e4591e8c019e922d921ea4696f03ce121335729d93e32d8ed3ce55ec
+    name: ready-rag-for-line-chart
+    type: application
+    urls:
+    - https://nakornttss.github.io/ready-rag-for-line/ready-rag-for-line-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-10-03T09:40:32.83086086Z"
