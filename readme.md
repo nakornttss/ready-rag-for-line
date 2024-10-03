@@ -90,7 +90,7 @@ The `values.yaml` file is used to configure how the Helm chart is deployed. Belo
 ```yaml
 image:
   repository: ghcr.io/nakornttss/ready-rag-for-line-package
-  tag: "v1.0.2"
+  tag: "v1.0.3"
   pullPolicy: IfNotPresent
 
 service:
