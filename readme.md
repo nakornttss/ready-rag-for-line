@@ -2,7 +2,7 @@
 
 This project provides a simple, ready-to-use Retrieval-Augmented Generation (RAG) solution for LINE messenger. It is configured to allow users to easily install and deploy using either Docker Compose or Helm in Kubernetes.
 
-![Introduction](intro.png)
+![Introduction](images/intro.png)
 
 ## Features
 
@@ -13,6 +13,8 @@ This project provides a simple, ready-to-use Retrieval-Augmented Generation (RAG
 - **Readiness and liveness probes** for Kubernetes health checking, ensuring the service is alive and ready to serve requests.
 - **Support for NodePort and ClusterIP** service types for flexible deployment options in Kubernetes.
 - Manual health check endpoints for readiness and liveness.
+
+![Introduction](images/linedemo.png)
 
 ## Prerequisites
 
@@ -79,6 +81,8 @@ This project provides a simple, ready-to-use Retrieval-Augmented Generation (RAG
 
 3. Access the service at `http://<node-ip>:<nodePort>` (if using NodePort) or through the cluster (if using ClusterIP).
 
+![Demo result from Helm installation](images/helmdemo.png)
+
 ## Configuring `values.yaml`
 
 The `values.yaml` file is used to configure how the Helm chart is deployed. Below is an example configuration:
@@ -118,6 +122,12 @@ The Helm chart supports two types of Kubernetes services for deployment: `NodePo
 - **ClusterIP**:
   - This is the default service type. It exposes the service internally to the cluster. Use this when the service does not need to be accessed from outside the Kubernetes cluster.
   - No `nodePort` is needed in this case, and the service will be accessible only within the Kubernetes cluster.
+
+### Setup LINE Webhook
+
+Base on your Service Types, you can setup Webhook to call your endpoint.
+
+![Follow us](images/setuplinewebhook.png)
 
 ## Readiness and Liveness Endpoints for Manual Check
 
@@ -175,4 +185,4 @@ This project is licensed under the MIT License.
 
 Follow us at https://www.tt-ss.net
 
-![Follow us](ttss.png)
+![Follow us](images/ttss.png)
