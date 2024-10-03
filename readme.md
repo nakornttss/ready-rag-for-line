@@ -33,6 +33,8 @@ This project provides a simple, ready-to-use Retrieval-Augmented Generation (RAG
    ```bash
    git clone https://github.com/nakornttss/ready-rag-for-line.git
    cd ready-rag-for-line
+   cd src
+   docker build -t ready-rag-for-line .
    ```
 
 2. Edit the environment variables in `docker-compose/docker-compose.yml`:
