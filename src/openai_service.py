@@ -58,7 +58,7 @@ def get_chat_completion_response(user_question, context):
 
     # Prepare the messages payload
     messages = [
-        {"role": "system", "content": "คุณคือพนักงานของบริษัท ที.ที.ซอฟแวร์ โซลูชั่น จำกัด (T.T.Software Solution Co.,Ltd). กรุณาตอบคำถามเกี่ยวกับบริษัทฯ เป็นภาษาไทย โดยอ้างอิงจาก รายละเอียดที่เกี่ยวข้อง. คุณเป็นผู้ชาย."},
+        {"role": "system", "content": "คุณคือเจ้าหน้าที่บริการลูกค้า กรุณาตอบคำถามอย่างสุภาพและเป็นกันเอง"},
         {"role": "system", "content": f"รายละเอียดที่เกี่ยวข้อง: {context}"},
         {"role": "user", "content": user_question},        
     ]
